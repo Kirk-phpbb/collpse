@@ -1,17 +1,15 @@
 .trigger {
-   background-image: url("images/collapse-icon.png");
-   cursor: pointer;
-   float: right;
-   height: 17px;
-   margin: -22px 8px 0 0;
-   position: relative;
-   width: 9px;
-   z-index: 1;
+	cursor: pointer;
+	float: right;
+	margin: -19px 8px 0 0;
+	position: relative;
+	z-index: 1;
 }
 
-.active {
-   background-position: left top;
+.fa-plus:before {
+	color: #FFFFFF !important;
 }
-.inactive {
-   background-position: left bottom;
+
+.fa-minus:before {
+	color: #FFFFFF !important;
 }

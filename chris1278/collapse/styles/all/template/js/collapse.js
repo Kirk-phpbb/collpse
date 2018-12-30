@@ -1,6 +1,3 @@
-// <![CDATA[
-
-
 	var sh_i = -1;
 	var showhidden_triger = [];
 
@@ -15,9 +12,9 @@
 			showhidden_triger[sh_i] = localStorage.getItem(cat_id);
 			if (showhidden_triger[sh_i] == null) { showhidden_triger[sh_i] = 'true' };
                 	if (showhidden_triger[sh_i] == 'false') {
-				return '<div class="trigger inactive" cat="' + cat_id +'"></div>';
+				return '<div class="trigger inactive icon fa-plus" cat="' + cat_id +'"></div>';
 				} else {
-				return '<div class="trigger active" cat="' + cat_id +'"></div>';
+				return '<div class="trigger active icon fa-minus" cat="' + cat_id +'"></div>';
 			}
 		}
 	    }).wrap('<div class="collapsethis" aria-hidden="false" />');
@@ -45,7 +42,7 @@
 					opacity: '0.3'
 					}, 1000)
 				});
-			$(this).removeClass('active').addClass('inactive');
+			$(this).removeClass('active').removeClass('icon fa-minus').addClass('inactive').addClass('icon fa-plus');
 		} else {
             		$(this).parents('div.forabg').animate({
                			 	opacity: '1.0'
@@ -53,7 +50,7 @@
                 			$('.trigger', this).next().attr('aria-hidden', 'false').slideDown(250, 'easeOutQuad')
             		});
  
-			$(this).removeClass('inactive').addClass('active').removeClass('hover');
+			$(this).removeClass('inactive').removeClass('icon fa-plus').addClass('active').addClass('icon fa-minus').removeClass('hover');
         	}
 		localStorage.setItem($(this).attr('cat'), showhidden_triger_this);
 	});
@@ -63,6 +60,3 @@
 		var time = 200, opacity = event.type == 'mouseenter' ?  '1.0' : (time = 0,'0.3');
 		$(event.delegateTarget).stop(true).delay(time).animate({ opacity: opacity }, 300)
 	})
-
-
-// ]]>
